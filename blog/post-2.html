@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="How I used Claude to build a complete financial model in 30 minutes — and what I learned about token limits along the way.">
+  <title>Building financial models with Claude — Leonard Law, CFA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/main.js" defer></script>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="../index.html" class="nav-logo">Leonard Law, CFA</a>
+
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links">
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#blog">Blog</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="post-main">
+    <div class="container">
+      <article class="post-article">
+
+        <header class="post-header">
+          <a href="../index.html#blog" class="back-link">← Back to blog</a>
+          <h1 class="post-title">Building financial models with Claude</h1>
+          <div class="post-meta">
+            <time datetime="2026-05-13">May 13, 2026</time>
+            <span class="post-meta-divider">·</span>
+            <span>2 min read</span>
+          </div>
+        </header>
+
+        <div class="post-body">
+
+          <p>
+            Building financial models is a core part of an analyst's job — but it's also one of the
+            most time-consuming. Earlier this year, I experimented with Claude to see whether AI could
+            accelerate this process, and the results have been genuinely impressive.
+          </p>
+
+          <h2>The Workflow</h2>
+
+          <p>
+            The workflow I've developed is straightforward. For a recent China Oil &amp; Gas model,
+            I uploaded three files into a Claude project:
+          </p>
+
+          <ul>
+            <li>a detailed instructions file outlining the rules for data input and formatting</li>
+            <li>a blank Excel financial model template (to standardise with my usual models)</li>
+            <li>the company's annual reports in PDF</li>
+          </ul>
+
+          <p>
+            With those inputs in place, Claude reads the reports, extracts the relevant financial data
+            year by year, reconciles line items across reporting periods, and populates the model —
+            including a three-year projection driven by an assumptions sheet. What would have taken me
+            (or a junior analyst) the better part of a day was done in 30 minutes.
+          </p>
+
+          <h2>Quality of Output</h2>
+
+          <p>
+            The quality of the output has held up well. Claude handles the fiddly parts that eat up
+            analyst time: standardising line items across years, catching when a company restates
+            prior-year figures, and building forecast formulas that are logically tied to the
+            assumptions.
+          </p>
+
+          <h2>One Limitation Worth Flagging</h2>
+
+          <p>
+            That said, there is one significant limitation worth flagging: token consumption. I hit a
+            hard limit when I tried to feed in ten years of annual reports all at once. The session
+            timed out after around five hours, which was frustrating given how close I was to a
+            complete model.
+          </p>
+
+          <p>
+            The lesson learned is to be strategic about what you upload. If you already have historical
+            data populated in your template, you can save meaningful tokens by simply uploading the
+            most recent year's annual report and asking Claude to update the model incrementally,
+            rather than rebuilding everything from scratch.
+          </p>
+
+          <h2>Overall</h2>
+
+          <p>
+            The workflow has been a meaningful time-saver. It won't replace analyst judgment — you
+            still need to sense-check the numbers, understand the business, and make your own calls on
+            projections — but it dramatically compresses the mechanical work of model construction.
+            For anyone in credit research looking to improve their workflow efficiency, it's a
+            low-hanging fruit worth exploring.
+          </p>
+
+        </div>
+
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Leonard Law, CFA · <a href="../index.html">Back to portfolio</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
