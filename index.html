@@ -27,9 +27,9 @@
       </button>
 
       <ul class="nav-links">
-        <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#blog">Blog</a></li>
+        <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
@@ -57,9 +57,79 @@
   </section>
 
   <!-- ======================================================
+       Projects
+       ====================================================== -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <p class="section-intro">
+        AI tools and experiments I've built to improve the credit research workflow.
+      </p>
+
+      <article class="project-feature">
+        <h3 class="project-feature-title">Financial Modelling using Claude</h3>
+        <p class="project-feature-description">
+          3-Statement Financial Model for China Oil &amp; Gas, with 10 Years of historical data
+          and 3 Years of forecasts, as per Lucror's standard template. Historical data input and projections are done entirely by Claude, with human input guidance.
+        </p>
+        <div class="card-tags">
+          <span class="tag">Financial Modelling</span>
+          <span class="tag">Claude</span>
+        </div>
+        <a href="https://docs.google.com/spreadsheets/d/1EUCBAuxQcHxzQKIXhnB-2qV_ACFmS4LJ/edit?usp=drive_link&ouid=113678077602390093440&rtpof=true&sd=true" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-3px; margin-right:6px;"><path d="M21.17 3.25H2.83A.83.83 0 0 0 2 4.08v15.84c0 .46.37.83.83.83h18.34c.46 0 .83-.37.83-.83V4.08a.83.83 0 0 0-.83-.83zM7.5 18H5v-2h2.5v2zm0-4H5v-2h2.5v2zm0-4H5V8h2.5v2zm9.5 8h-8v-2h8v2zm0-4h-8v-2h8v2zm0-4h-8V8h8v2z"/></svg>
+          View Model →
+        </a>
+      </article>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       Blog
+       ====================================================== -->
+  <section id="blog" class="section section--alt">
+    <div class="container">
+      <h2 class="section-title">Blog</h2>
+      <p class="section-intro">
+        Notes and reflections from my experimentation with AI in credit research.
+      </p>
+
+      <div class="blog-grid">
+
+        <!-- Blog post card 1 — links to blog/post-1.html -->
+        <article class="card blog-card">
+          <time class="card-date" datetime="2026-04-22">April 22, 2026</time>
+          <h3 class="card-title">
+            <a href="blog/post-1.html">Why I Started This AI Journey</a>
+          </h3>
+          <p class="card-excerpt">
+            Twelve years into credit research, I've started wondering: what does
+            the job look like when AI handles the routine work? Here's where I'm starting.
+          </p>
+          <a href="blog/post-1.html" class="card-link">Read more →</a>
+        </article>
+
+        <!-- Blog post card 2 — links to blog/post-2.html -->
+        <article class="card blog-card">
+          <time class="card-date" datetime="2026-05-13">May 13, 2026</time>
+          <h3 class="card-title">
+            <a href="blog/post-2.html">Building financial models with Claude</a>
+          </h3>
+          <p class="card-excerpt">
+            Building financial models is a core part of an analyst's job — but it's also
+            one of the most time-consuming. Here's how I used Claude to cut that time dramatically.
+          </p>
+          <a href="blog/post-2.html" class="card-link">Read more →</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
        About
        ====================================================== -->
-  <section id="about" class="section section--alt">
+  <section id="about" class="section">
     <div class="container">
       <div class="about-grid">
 
@@ -117,119 +187,9 @@
   </section>
 
   <!-- ======================================================
-       Projects
-       ====================================================== -->
-  <section id="projects" class="section">
-    <div class="container">
-      <h2 class="section-title">Projects</h2>
-      <p style="margin-bottom: var(--space-lg); color: var(--color-text-muted);">
-        AI tools and experiments I've built to improve the credit research workflow.
-      </p>
-
-      <div class="projects-grid">
-
-        <!-- EDIT: Replace with your real project 1 -->
-        <article class="card">
-          <h3 class="card-title">Financial Modelling using Claude</h3>
-          <p class="card-description">
-            3-Statement Financial Model for China Oil &amp; Gas, with 10 Years of historical data
-            and 3 Years of forecasts, as per Lucror's standard template. Historical data input and projections are done entirely by Claude, with human input guidance.
-          </p>
-          <div class="card-tags">
-            <span class="tag">Financial Modelling</span>
-            <span class="tag">Claude</span>
-                      </div>
-          <a href="https://docs.google.com/spreadsheets/d/1EUCBAuxQcHxzQKIXhnB-2qV_ACFmS4LJ/edit?usp=drive_link&ouid=113678077602390093440&rtpof=true&sd=true" class="card-link" target="_blank" rel="noopener noreferrer">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-3px; margin-right:4px;"><path d="M21.17 3.25H2.83A.83.83 0 0 0 2 4.08v15.84c0 .46.37.83.83.83h18.34c.46 0 .83-.37.83-.83V4.08a.83.83 0 0 0-.83-.83zM7.5 18H5v-2h2.5v2zm0-4H5v-2h2.5v2zm0-4H5V8h2.5v2zm9.5 8h-8v-2h8v2zm0-4h-8v-2h8v2zm0-4h-8V8h8v2z"/></svg>
-            View Model →
-          </a>
-        </article>
-
-        <!-- EDIT: Replace with your real project 2 -->
-        <article class="card">
-          <h3 class="card-title">Project Two Title</h3>
-          <p class="card-description">
-            A short description of what this project does and the problem it solves
-            in your credit research workflow.
-          </p>
-          <div class="card-tags">
-            <span class="tag">LLM</span>
-            <span class="tag">Automation</span>
-          </div>
-          <a href="#" class="card-link">View Project →</a>
-        </article>
-
-        <!-- EDIT: Replace with your real project 3 -->
-        <article class="card">
-          <h3 class="card-title">Project Three Title</h3>
-          <p class="card-description">
-            A short description of what this project does and the problem it solves
-            in your credit research workflow.
-          </p>
-          <div class="card-tags">
-            <span class="tag">Data Analysis</span>
-            <span class="tag">Bonds</span>
-          </div>
-          <a href="#" class="card-link">View Project →</a>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ======================================================
-       Blog
-       ====================================================== -->
-  <section id="blog" class="section section--alt">
-    <div class="container">
-      <h2 class="section-title">Blog</h2>
-      <p style="margin-bottom: var(--space-lg); color: var(--color-text-muted);">
-        Notes and reflections from my experimentation with AI in credit research.
-      </p>
-
-      <div class="blog-grid">
-
-        <!-- Blog post card 1 — links to blog/post-1.html -->
-        <article class="card blog-card">
-          <time class="card-date" datetime="2026-04-22">April 22, 2026</time>
-          <h3 class="card-title">
-            <a href="blog/post-1.html">Why I Started This AI Journey</a>
-          </h3>
-          <p class="card-excerpt">
-            Twelve years into credit research, I've started wondering: what does
-            the job look like when AI handles the routine work? Here's where I'm starting.
-          </p>
-          <a href="blog/post-1.html" class="card-link">Read more →</a>
-        </article>
-
-        <!-- Blog post card 2 — links to blog/post-2.html -->
-        <article class="card blog-card">
-          <time class="card-date" datetime="2026-05-13">May 13, 2026</time>
-          <h3 class="card-title">
-            <a href="blog/post-2.html">Building financial models with Claude</a>
-          </h3>
-          <p class="card-excerpt">
-            Building financial models is a core part of an analyst's job — but it's also
-            one of the most time-consuming. Here's how I used Claude to cut that time dramatically.
-          </p>
-          <a href="blog/post-2.html" class="card-link">Read more →</a>
-        </article>
-
-        <!-- EDIT: Add your third blog post card here when ready -->
-        <article class="card blog-card" style="border-style: dashed; opacity: 0.5;">
-          <time class="card-date" datetime="">Coming soon</time>
-          <h3 class="card-title" style="color: var(--color-text-muted);">Next Post</h3>
-          <p class="card-excerpt">Your third post will appear here.</p>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ======================================================
        Contact
        ====================================================== -->
-  <section id="contact" class="section">
+  <section id="contact" class="section section--alt">
     <div class="container">
       <div class="contact-content">
         <h2 class="section-title" style="display: block; text-align: center;">Get in Touch</h2>

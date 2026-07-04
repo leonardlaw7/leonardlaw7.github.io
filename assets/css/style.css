@@ -108,6 +108,11 @@ a:hover {
   display: inline-block;
 }
 
+.section-intro {
+  margin-bottom: var(--space-lg);
+  color: var(--color-text-muted);
+}
+
 .section-title::after {
   content: '';
   position: absolute;
@@ -404,18 +409,34 @@ a:hover {
 
 /* 10. Projects Section
    ============================================================ */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-md);
-  margin-top: var(--space-lg);
+.project-feature {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-xl) var(--space-lg);
+  box-shadow: 0 4px 24px rgba(37, 99, 235, 0.06);
+}
+
+.project-feature-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+}
+
+.project-feature-description {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  max-width: 65ch;
+  margin-bottom: var(--space-md);
 }
 
 /* 11. Blog Section
    ============================================================ */
 .blog-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--space-md);
   margin-top: var(--space-lg);
 }
@@ -663,7 +684,6 @@ a:hover {
   }
 
   /* Grids */
-  .projects-grid,
   .blog-grid {
     grid-template-columns: 1fr;
   }
