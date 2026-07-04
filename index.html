@@ -66,44 +66,28 @@
         AI tools and experiments I've built to improve the credit research workflow.
       </p>
 
-      <div class="projects-grid">
-        <article class="project-card">
-          <div class="project-card-image">
+      <article class="project-feature">
+        <div class="project-feature-header">
+          <button type="button" class="project-logo" data-lightbox-trigger aria-label="Expand screenshot">
             <img src="assets/images/COG%20financial%20model%20image.jpg"
                  alt="Screenshot of the China Oil &amp; Gas 3-statement financial model"
                  loading="lazy">
-          </div>
-          <div class="project-card-body">
-            <h3 class="project-card-title">Financial Modelling using Claude</h3>
-
-            <div class="project-card-section">
-              <span class="project-card-label">Problem</span>
-              <p class="project-card-text">Building a full 3-statement model by hand — 10 years of historicals plus a 3-year forecast — is slow, repetitive work that eats into research time.</p>
-            </div>
-            <div class="project-card-section">
-              <span class="project-card-label">What I built</span>
-              <p class="project-card-text">A complete 3-statement financial model for China Oil &amp; Gas, following Lucror's standard template, with Claude handling data input and projections end-to-end under human guidance.</p>
-            </div>
-            <div class="project-card-section">
-              <span class="project-card-label">Stack</span>
-              <div class="card-tags">
-                <span class="tag">Claude</span>
-                <span class="tag">Google Sheets</span>
-              </div>
-            </div>
-            <div class="project-card-section">
-              <span class="project-card-label">Result</span>
-              <p class="project-card-text">10 years of historical data and a 3-year forecast, fully populated and reviewable in the linked model.</p>
-            </div>
-
-            <a href="https://docs.google.com/spreadsheets/d/1EUCBAuxQcHxzQKIXhnB-2qV_ACFmS4LJ/edit?usp=drive_link&ouid=113678077602390093440&rtpof=true&sd=true"
-               class="card-link" target="_blank" rel="noopener noreferrer">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-3px; margin-right:4px;"><path d="M21.17 3.25H2.83A.83.83 0 0 0 2 4.08v15.84c0 .46.37.83.83.83h18.34c.46 0 .83-.37.83-.83V4.08a.83.83 0 0 0-.83-.83zM7.5 18H5v-2h2.5v2zm0-4H5v-2h2.5v2zm0-4H5V8h2.5v2zm9.5 8h-8v-2h8v2zm0-4h-8v-2h8v2zm0-4h-8V8h8v2z"/></svg>
-              View Model →
-            </a>
-          </div>
-        </article>
-      </div>
+          </button>
+          <h3 class="project-feature-title">Financial Modelling using Claude</h3>
+        </div>
+        <p class="project-feature-description">
+          3-Statement Financial Model for China Oil &amp; Gas, with 10 Years of historical data
+          and 3 Years of forecasts, as per Lucror's standard template. Historical data input and projections are done entirely by Claude, with human input guidance.
+        </p>
+        <div class="card-tags">
+          <span class="tag">Financial Modelling</span>
+          <span class="tag">Claude</span>
+        </div>
+        <a href="https://docs.google.com/spreadsheets/d/1EUCBAuxQcHxzQKIXhnB-2qV_ACFmS4LJ/edit?usp=drive_link&ouid=113678077602390093440&rtpof=true&sd=true" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-3px; margin-right:6px;"><path d="M21.17 3.25H2.83A.83.83 0 0 0 2 4.08v15.84c0 .46.37.83.83.83h18.34c.46 0 .83-.37.83-.83V4.08a.83.83 0 0 0-.83-.83zM7.5 18H5v-2h2.5v2zm0-4H5v-2h2.5v2zm0-4H5V8h2.5v2zm9.5 8h-8v-2h8v2zm0-4h-8v-2h8v2zm0-4h-8V8h8v2z"/></svg>
+          View Model →
+        </a>
+      </article>
     </div>
   </section>
 
@@ -245,6 +229,14 @@
       <p>© 2026 Leonard Law, CFA · Built with plain HTML &amp; hosted on GitHub Pages</p>
     </div>
   </footer>
+
+  <!-- ======================================================
+       Lightbox (image expand)
+       ====================================================== -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button type="button" class="lightbox-close" aria-label="Close image">&times;</button>
+    <img class="lightbox-image" src="" alt="">
+  </div>
 
 </body>
 </html>

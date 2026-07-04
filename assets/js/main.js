@@ -48,3 +48,47 @@ if (sections.length && navAnchors.length) {
 
   sections.forEach(section => observer.observe(section));
 }
+
+// 3. Image Lightbox
+// Click a [data-lightbox-trigger] to view its image full-size in an overlay.
+// ============================================================
+const lightbox      = document.getElementById('lightbox');
+const lightboxImage = lightbox ? lightbox.querySelector('.lightbox-image') : null;
+const lightboxClose = lightbox ? lightbox.querySelector('.lightbox-close') : null;
+const lightboxTriggers = document.querySelectorAll('[data-lightbox-trigger]');
+
+function openLightbox(src, alt) {
+  if (!lightbox || !lightboxImage) return;
+  lightboxImage.src = src;
+  lightboxImage.alt = alt || '';
+  lightbox.classList.add('is-open');
+  lightbox.setAttribute('aria-hidden', 'false');
+}
+
+function closeLightbox() {
+  if (!lightbox || !lightboxImage) return;
+  lightbox.classList.remove('is-open');
+  lightbox.setAttribute('aria-hidden', 'true');
+  lightboxImage.src = '';
+}
+
+lightboxTriggers.forEach(trigger => {
+  trigger.addEventListener('click', () => {
+    const img = trigger.querySelector('img');
+    if (img) openLightbox(img.src, img.alt);
+  });
+});
+
+if (lightboxClose) {
+  lightboxClose.addEventListener('click', closeLightbox);
+}
+
+if (lightbox) {
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeLightbox();
+});
