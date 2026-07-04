@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<main class="post-main">
+  <div class="container">
+    <article class="post-article">
+
+      <header class="post-header">
+        <a href="/#blog" class="back-link">← Back to blog</a>
+        <h1 class="post-title">{{ page.title }}</h1>
+        <div class="post-meta">
+          <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%B %-d, %Y' }}</time>
+          <span class="post-meta-divider">·</span>
+          <span>{{ page.read_time }}</span>
+        </div>
+      </header>
+
+      <div class="post-body">
+        {{ content }}
+      </div>
+
+    </article>
+  </div>
+</main>

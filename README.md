@@ -1,7 +1,8 @@
 # Leonard Law — Portfolio Website
 
-A personal portfolio site built with plain HTML, CSS, and JavaScript.
-Hosted for free on GitHub Pages. No build tools or npm required.
+A personal portfolio site built with HTML, CSS, and JavaScript, with the blog
+powered by Jekyll — which GitHub Pages builds natively, no extra setup or
+npm required.
 
 ---
 
@@ -9,15 +10,22 @@ Hosted for free on GitHub Pages. No build tools or npm required.
 
 ```
 portfolio/
-├── index.html              ← Main page (all sections: About, Projects, Blog, Contact)
+├── index.html              ← Main page (About, Projects, Blog teaser, Contact)
+├── _config.yml             ← Site title/description, permalink settings
+├── _layouts/
+│   ├── default.html        ← Shared page chrome (head, nav, footer)
+│   └── post.html           ← Blog post layout (title, date, body)
+├── _posts/
+│   ├── 2026-04-22-post-1.md  ← Blog posts as Markdown + front matter
+│   └── 2026-05-13-post-2.md
 ├── blog/
-│   ├── post-template.html  ← Copy this to create a new blog post
-│   └── post-1.html         ← First blog post
+│   └── index.html           ← Blog index page — auto-lists every post
 ├── assets/
-│   ├── css/style.css       ← All styling
+│   ├── css/style.css       ← All styling (unchanged by the Jekyll conversion)
 │   ├── js/main.js          ← Mobile nav + scroll behaviour
 │   └── images/
 │       └── profile-placeholder.svg  ← Replace with your real photo
+├── Gemfile                 ← For local preview only (`bundle exec jekyll serve`)
 └── README.md               ← This file
 ```
 
@@ -27,20 +35,22 @@ portfolio/
 
 ### Add a New Blog Post
 
-1. Open the `blog/` folder
-2. Copy `post-template.html` and rename it — e.g. `post-2.html`
-3. Open the new file and update every section marked `<!-- EDIT -->`
-   - Page title and meta description (in `<head>`)
-   - Post title (`<h1>`)
-   - Date — both the `datetime="YYYY-MM-DD"` attribute and the displayed text
-   - Reading time estimate
-   - Post body content
-4. Open `index.html` and find the **Blog** section
-5. Copy one of the existing `<article class="card blog-card">` blocks
-6. Paste it at the top of the `.blog-grid` div
-7. Update the title, date, excerpt, and both `href` links to point to your new file (e.g. `blog/post-2.html`)
-8. Delete or update one of the "Coming soon" placeholder cards if needed
-9. Save both files and deploy (see Deploying below)
+1. Open the `_posts/` folder
+2. Copy an existing post (e.g. `2026-05-13-post-2.md`) and rename it to
+   `YYYY-MM-DD-your-post-slug.md` — the date becomes part of the post's date,
+   and the slug becomes its URL: `/blog/your-post-slug.html`
+3. Update the front matter at the top of the file:
+   - `title` — the post title
+   - `date` — must match the date in the filename
+   - `description` — one sentence, used for the page's meta description
+   - `excerpt` — the one-line summary shown on the blog index and homepage
+   - `read_time` — estimated reading time (roughly 200 words per minute)
+4. Replace the body below the `---` with your post in Markdown (`##` for
+   headings, blank lines between paragraphs, `- ` for bullet lists, `> ` for
+   blockquotes)
+5. Save and deploy (see Deploying below) — the new post automatically
+   appears on the blog index page (`/blog/`) and the homepage teaser
+   (newest 2 posts), newest first. No other files need editing.
 
 ---
 
@@ -113,6 +123,6 @@ If you haven't set up GitHub Pages yet:
 ## Tips
 
 - **All file names must be lowercase** — GitHub Pages runs on Linux, which is case-sensitive. `Style.css` and `style.css` are different files.
-- **Test locally first** — open `index.html` in your browser before pushing. If images and styles load locally, they'll load on GitHub Pages.
-- **Blog post numbering** — keep incrementing: `post-2.html`, `post-3.html`, etc. Don't reuse numbers.
-- **Updating the footer year** — the footer in `index.html` and both blog HTML files includes `© 2026`. Update this each January.
+- **Test locally before pushing** — because the homepage and blog now use Jekyll's `{% for %}` templating, opening `index.html` directly in a browser won't render the blog teaser correctly (you'll see the raw Liquid tags). Install Ruby + Jekyll and run `bundle exec jekyll serve`, then check `http://localhost:4000`, or push to a branch and preview the GitHub Pages build before merging to `main`.
+- **Blog post filenames** — always `YYYY-MM-DD-slug.md` in `_posts/`. The date must be valid and match the front matter `date`.
+- **Updating the footer year** — the footer in `index.html` and `_layouts/default.html` includes `© 2026`. Update both each January.

@@ -1,0 +1,25 @@
+---
+layout: default
+title: Blog
+description: Notes and reflections from my experimentation with AI in credit research.
+permalink: /blog/
+---
+<section class="section">
+  <div class="container">
+    <h1 class="section-title">Blog</h1>
+    <p class="section-intro">Notes and reflections from my experimentation with AI in credit research.</p>
+
+    <div class="blog-grid">
+      {% for post in site.posts %}
+      <article class="card blog-card">
+        <time class="card-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%B %-d, %Y' }}</time>
+        <h3 class="card-title">
+          <a href="{{ post.url }}">{{ post.title }}</a>
+        </h3>
+        <p class="card-excerpt">{{ post.excerpt }}</p>
+        <a href="{{ post.url }}" class="card-link">Read more →</a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
