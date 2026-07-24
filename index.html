@@ -137,6 +137,51 @@
             </div>
           </div>
         </article>
+
+        <article class="project-card">
+          <button type="button" class="project-card-image is-diagram" data-lightbox-trigger aria-label="Expand diagram">
+            <img src="assets/images/indenture_analysis_workflow.png"
+                 alt="Diagram: Indenture Analysis Workflow — a bond OM/OC PDF is extracted into a page-indexed text layer, covenant sections are located, 27 fields are extracted with page and quote references, a two-layer QC pass checks completeness and quote accuracy, a covenant-strength analysis is written, and the Indenture Summary, Analysis, Excel field table and HTML verifier are generated for analyst review."
+                 loading="lazy">
+          </button>
+          <div class="project-card-body">
+            <h3 class="project-card-title">Automated bond covenant analysis skill</h3>
+
+            <div class="project-card-section">
+              <span class="project-card-label">Problem</span>
+              <p class="project-card-text">Extracting covenant terms from a bond Offering Memorandum is slow, detail-heavy work. Each OM runs to hundreds of pages, the key restricted-payment, debt-incurrence and structural-subordination terms are scattered throughout, and a single missed carve-out can change a credit view. Doing this by hand for every new deal is a major drain on analyst time, and consistency across analysts is hard to maintain.</p>
+            </div>
+            <div class="project-card-section">
+              <span class="project-card-label">What I built</span>
+              <p class="project-card-text">A reusable Claude skill that reads a bond OM/OC and produces a structured Lucror Indenture Summary. It extracts covenant terms into a standardised set of fields, applies a per-field grading rubric to score covenant quality, and outputs the result as Word and Excel reports. It also generates an interactive HTML verifier that links every extracted field back to the exact OM page and verbatim quote, plus an automated quality-control pass that confirms all fields are populated and that each quote genuinely appears on the cited page. The skill is designed for Asia and Middle East credits, with structural checklists for holdco structures, keepwell enforceability and structural subordination.</p>
+            </div>
+            <div class="project-card-section">
+              <span class="project-card-label">Stack</span>
+              <div class="card-tags">
+                <span class="tag">Claude</span>
+                <span class="tag">Python</span>
+                <span class="tag">Anthropic API</span>
+              </div>
+            </div>
+            <div class="project-card-section">
+              <span class="project-card-label">Result</span>
+              <p class="project-card-text">Turns a manual, multi-hour covenant read into a structured, graded and source-verified summary produced in one pass, with every term traceable back to the OM for review.</p>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: var(--space-xs);">
+              <a href="https://drive.google.com/file/d/1b3o4x3Jl_1hncFziggbOMnyG221JYf-L/view?usp=drive_link"
+                 class="card-link" target="_blank" rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-3px; margin-right:4px;"><path d="M21.17 3.25H2.83A.83.83 0 0 0 2 4.08v15.84c0 .46.37.83.83.83h18.34c.46 0 .83-.37.83-.83V4.08a.83.83 0 0 0-.83-.83zM7.5 18H5v-2h2.5v2zm0-4H5v-2h2.5v2zm0-4H5V8h2.5v2zm9.5 8h-8v-2h8v2zm0-4h-8v-2h8v2zm0-4h-8V8h8v2z"/></svg>
+                Vedanta Indenture Analysis Sample →
+              </a>
+              <a href="https://drive.google.com/file/d/1Tb7fmvU33jwtQorrr-qHsLBrds1HrD4Y/view?usp=drive_link"
+                 class="card-link" target="_blank" rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-3px; margin-right:4px;"><path d="M21.17 3.25H2.83A.83.83 0 0 0 2 4.08v15.84c0 .46.37.83.83.83h18.34c.46 0 .83-.37.83-.83V4.08a.83.83 0 0 0-.83-.83zM7.5 18H5v-2h2.5v2zm0-4H5v-2h2.5v2zm0-4H5V8h2.5v2zm9.5 8h-8v-2h8v2zm0-4h-8v-2h8v2zm0-4h-8V8h8v2z"/></svg>
+                Vedanta Covenant Extract Sample →
+              </a>
+            </div>
+          </div>
+        </article>
       </div>
     </div>
   </section>
