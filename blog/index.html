@@ -6,19 +6,20 @@ permalink: /blog/
 ---
 <section class="section">
   <div class="container">
-    <h1 class="section-title">Blog</h1>
+    <span class="eyebrow">// blog</span>
+    <h1 class="section-title">Notes from the field</h1>
     <p class="section-intro">Notes and reflections from my experimentation with AI in credit research.</p>
 
-    <div class="blog-grid">
+    <div class="blog-list">
       {% for post in site.posts %}
-      <article class="card blog-card">
-        <time class="card-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%B %-d, %Y' }}</time>
-        <h3 class="card-title">
-          <a href="{{ post.url }}">{{ post.title }}</a>
-        </h3>
-        <p class="card-excerpt">{{ post.excerpt }}</p>
-        <a href="{{ post.url }}" class="card-link">Read more →</a>
-      </article>
+      <a class="blog-row" href="{{ post.url }}">
+        <time class="card-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%Y.%m.%d' }}</time>
+        <div class="blog-row-body">
+          <h3>{{ post.title }}</h3>
+          <p>{{ post.excerpt }}</p>
+        </div>
+        <span class="blog-row-arrow">→</span>
+      </a>
       {% endfor %}
     </div>
   </div>

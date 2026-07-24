@@ -9,7 +9,7 @@
   <title>Leonard Law, CFA — Credit Research Analyst</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <script src="assets/js/main.js" defer></script>
 </head>
@@ -20,7 +20,7 @@
        ====================================================== -->
   <nav class="nav">
     <div class="container nav-inner">
-      <a href="#" class="nav-logo">Leonard Law, CFA</a>
+      <a href="#" class="nav-logo">leonard<span class="nav-logo-accent">.law</span></a>
 
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
         <span></span>
@@ -29,10 +29,10 @@
       </button>
 
       <ul class="nav-links">
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#projects">projects</a></li>
+        <li><a href="#blog">blog</a></li>
+        <li><a href="#about">about</a></li>
+        <li><a href="#contact">contact</a></li>
       </ul>
     </div>
   </nav>
@@ -42,18 +42,28 @@
        ====================================================== -->
   <section class="hero">
     <div class="container">
-      <div class="hero-content">
-        <span class="hero-eyebrow">Credit Research · Artificial Intelligence</span>
-        <h1 class="hero-title">Leonard Law, CFA</h1>
-        <p class="hero-subtitle">Asia credit research analyst who builds AI into the workflow.</p>
-        <p class="hero-summary">
-          12 years analyzing Asian high-yield and investment-grade corporate bonds.<br>
-          Now building agentic AI tools to speed up credit research.
-        </p>
-        <div class="hero-actions">
-          <a href="#projects" class="btn btn-primary">View projects</a>
-          <a href="#contact" class="btn btn-secondary">Get in touch</a>
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge"><span class="dot"></span>Credit research × AI</div>
+          <h1 class="hero-title">Asia credit research analyst who <span class="accent">builds AI</span> into the workflow.</h1>
+          <p class="hero-summary">
+            12 years analyzing Asian high-yield and investment-grade corporate bonds.
+            Now building agentic AI tools to speed up credit research.
+          </p>
+          <div class="hero-actions">
+            <a href="https://www.linkedin.com/in/leonard-law-cfa/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Connect on LinkedIn →</a>
+            <a href="#projects" class="btn btn-secondary">View projects</a>
+          </div>
         </div>
+        <div class="hero-portrait">
+          <img src="assets/images/linkedin-profile-photo.jpg" alt="Leonard Law, CFA">
+          <div class="caption">Leonard Law, CFA · Singapore</div>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="num">12 yrs</div><div class="lbl">credit research</div></div>
+        <div class="hero-stat"><div class="num">CFA</div><div class="lbl">charterholder</div></div>
+        <div class="hero-stat"><div class="num">Asia HY/IG</div><div class="lbl">corporate bonds</div></div>
       </div>
     </div>
   </section>
@@ -63,46 +73,55 @@
        ====================================================== -->
   <section id="projects" class="section">
     <div class="container">
-      <h2 class="section-title">Projects</h2>
+      <span class="eyebrow">// projects</span>
+      <h2 class="section-title">AI tools built for the credit workflow</h2>
       <p class="section-intro">
         AI tools and experiments I've built to improve the credit research workflow.
       </p>
 
       <div class="projects-grid">
         <article class="project-card">
-          <button type="button" class="project-card-image" data-lightbox-trigger aria-label="Expand screenshot">
-            <img src="assets/images/COG%20financial%20model%20image.jpg"
-                 alt="Screenshot of the China Oil &amp; Gas 3-statement financial model"
+          <button type="button" class="project-card-image is-diagram" data-lightbox-trigger aria-label="Expand diagram">
+            <img src="assets/images/indenture_analysis_workflow.png"
+                 alt="Diagram: Indenture Analysis Workflow — a bond OM/OC PDF is extracted into a page-indexed text layer, covenant sections are located, 27 fields are extracted with page and quote references, a two-layer QC pass checks completeness and quote accuracy, a covenant-strength analysis is written, and the Indenture Summary, Analysis, Excel field table and HTML verifier are generated for analyst review."
                  loading="lazy">
           </button>
           <div class="project-card-body">
-            <h3 class="project-card-title">Financial Modelling using Claude</h3>
+            <h3 class="project-card-title">Automated bond covenant analysis skill</h3>
 
             <div class="project-card-section">
               <span class="project-card-label">Problem</span>
-              <p class="project-card-text">Building a full 3-statement model by hand — 10 years of historicals plus a 3-year forecast — is slow, repetitive work that eats into research time.</p>
+              <p class="project-card-text">Extracting covenant terms from a bond Offering Memorandum is slow, detail-heavy work. Each OM runs to hundreds of pages, the key restricted-payment, debt-incurrence and structural-subordination terms are scattered throughout, and a single missed carve-out can change a credit view. Doing this by hand for every new deal is a major drain on analyst time, and consistency across analysts is hard to maintain.</p>
             </div>
             <div class="project-card-section">
               <span class="project-card-label">What I built</span>
-              <p class="project-card-text">A complete 3-statement financial model for China Oil &amp; Gas, following a standard template, with Claude handling data input and projections end-to-end under human guidance.</p>
+              <p class="project-card-text">A reusable Claude skill that reads a bond OM/OC and produces a structured Lucror Indenture Summary. It extracts covenant terms into a standardised set of fields, applies a per-field grading rubric to score covenant quality, and outputs the result as Word and Excel reports. It also generates an interactive HTML verifier that links every extracted field back to the exact OM page and verbatim quote, plus an automated quality-control pass that confirms all fields are populated and that each quote genuinely appears on the cited page. The skill is designed for Asia and Middle East credits, with structural checklists for holdco structures, keepwell enforceability and structural subordination.</p>
             </div>
             <div class="project-card-section">
               <span class="project-card-label">Stack</span>
               <div class="card-tags">
                 <span class="tag">Claude</span>
-                <span class="tag">Google Sheets</span>
+                <span class="tag">Python</span>
+                <span class="tag">Anthropic API</span>
               </div>
             </div>
             <div class="project-card-section">
               <span class="project-card-label">Result</span>
-              <p class="project-card-text">10 years of historical data and a 3-year forecast, fully populated and reviewable in the linked model.</p>
+              <p class="project-card-text">Turns a manual, multi-hour covenant read into a structured, graded and source-verified summary produced in one pass, with every term traceable back to the OM for review.</p>
             </div>
 
-            <a href="https://docs.google.com/spreadsheets/d/1EUCBAuxQcHxzQKIXhnB-2qV_ACFmS4LJ/edit?usp=drive_link&ouid=113678077602390093440&rtpof=true&sd=true"
-               class="card-link" target="_blank" rel="noopener noreferrer">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-3px; margin-right:4px;"><path d="M21.17 3.25H2.83A.83.83 0 0 0 2 4.08v15.84c0 .46.37.83.83.83h18.34c.46 0 .83-.37.83-.83V4.08a.83.83 0 0 0-.83-.83zM7.5 18H5v-2h2.5v2zm0-4H5v-2h2.5v2zm0-4H5V8h2.5v2zm9.5 8h-8v-2h8v2zm0-4h-8v-2h8v2zm0-4h-8V8h8v2z"/></svg>
-              View Model →
-            </a>
+            <div class="project-card-links">
+              <a href="https://drive.google.com/file/d/1b3o4x3Jl_1hncFziggbOMnyG221JYf-L/view?usp=drive_link"
+                 class="card-link" target="_blank" rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-3px; margin-right:4px;"><path d="M21.17 3.25H2.83A.83.83 0 0 0 2 4.08v15.84c0 .46.37.83.83.83h18.34c.46 0 .83-.37.83-.83V4.08a.83.83 0 0 0-.83-.83zM7.5 18H5v-2h2.5v2zm0-4H5v-2h2.5v2zm0-4H5V8h2.5v2zm9.5 8h-8v-2h8v2zm0-4h-8v-2h8v2zm0-4h-8V8h8v2z"/></svg>
+                Vedanta Indenture Analysis Sample →
+              </a>
+              <a href="https://drive.google.com/file/d/1Tb7fmvU33jwtQorrr-qHsLBrds1HrD4Y/view?usp=drive_link"
+                 class="card-link" target="_blank" rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-3px; margin-right:4px;"><path d="M21.17 3.25H2.83A.83.83 0 0 0 2 4.08v15.84c0 .46.37.83.83.83h18.34c.46 0 .83-.37.83-.83V4.08a.83.83 0 0 0-.83-.83zM7.5 18H5v-2h2.5v2zm0-4H5v-2h2.5v2zm0-4H5V8h2.5v2zm9.5 8h-8v-2h8v2zm0-4h-8v-2h8v2zm0-4h-8V8h8v2z"/></svg>
+                Vedanta Covenant Extract Sample →
+              </a>
+            </div>
           </div>
         </article>
 
@@ -139,45 +158,39 @@
         </article>
 
         <article class="project-card">
-          <button type="button" class="project-card-image is-diagram" data-lightbox-trigger aria-label="Expand diagram">
-            <img src="assets/images/indenture_analysis_workflow.png"
-                 alt="Diagram: Indenture Analysis Workflow — a bond OM/OC PDF is extracted into a page-indexed text layer, covenant sections are located, 27 fields are extracted with page and quote references, a two-layer QC pass checks completeness and quote accuracy, a covenant-strength analysis is written, and the Indenture Summary, Analysis, Excel field table and HTML verifier are generated for analyst review."
+          <button type="button" class="project-card-image" data-lightbox-trigger aria-label="Expand screenshot">
+            <img src="assets/images/COG%20financial%20model%20image.jpg"
+                 alt="Screenshot of the China Oil &amp; Gas 3-statement financial model"
                  loading="lazy">
           </button>
           <div class="project-card-body">
-            <h3 class="project-card-title">Automated bond covenant analysis skill</h3>
+            <h3 class="project-card-title">Financial Modelling using Claude</h3>
 
             <div class="project-card-section">
               <span class="project-card-label">Problem</span>
-              <p class="project-card-text">Extracting covenant terms from a bond Offering Memorandum is slow, detail-heavy work. Each OM runs to hundreds of pages, the key restricted-payment, debt-incurrence and structural-subordination terms are scattered throughout, and a single missed carve-out can change a credit view. Doing this by hand for every new deal is a major drain on analyst time, and consistency across analysts is hard to maintain.</p>
+              <p class="project-card-text">Building a full 3-statement model by hand — 10 years of historicals plus a 3-year forecast — is slow, repetitive work that eats into research time.</p>
             </div>
             <div class="project-card-section">
               <span class="project-card-label">What I built</span>
-              <p class="project-card-text">A reusable Claude skill that reads a bond OM/OC and produces a structured Lucror Indenture Summary. It extracts covenant terms into a standardised set of fields, applies a per-field grading rubric to score covenant quality, and outputs the result as Word and Excel reports. It also generates an interactive HTML verifier that links every extracted field back to the exact OM page and verbatim quote, plus an automated quality-control pass that confirms all fields are populated and that each quote genuinely appears on the cited page. The skill is designed for Asia and Middle East credits, with structural checklists for holdco structures, keepwell enforceability and structural subordination.</p>
+              <p class="project-card-text">A complete 3-statement financial model for China Oil &amp; Gas, following a standard template, with Claude handling data input and projections end-to-end under human guidance.</p>
             </div>
             <div class="project-card-section">
               <span class="project-card-label">Stack</span>
               <div class="card-tags">
                 <span class="tag">Claude</span>
-                <span class="tag">Python</span>
-                <span class="tag">Anthropic API</span>
+                <span class="tag">Google Sheets</span>
               </div>
             </div>
             <div class="project-card-section">
               <span class="project-card-label">Result</span>
-              <p class="project-card-text">Turns a manual, multi-hour covenant read into a structured, graded and source-verified summary produced in one pass, with every term traceable back to the OM for review.</p>
+              <p class="project-card-text">10 years of historical data and a 3-year forecast, fully populated and reviewable in the linked model.</p>
             </div>
 
-            <div style="display: flex; flex-direction: column; gap: var(--space-xs);">
-              <a href="https://drive.google.com/file/d/1b3o4x3Jl_1hncFziggbOMnyG221JYf-L/view?usp=drive_link"
+            <div class="project-card-links">
+              <a href="https://docs.google.com/spreadsheets/d/1EUCBAuxQcHxzQKIXhnB-2qV_ACFmS4LJ/edit?usp=drive_link&ouid=113678077602390093440&rtpof=true&sd=true"
                  class="card-link" target="_blank" rel="noopener noreferrer">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-3px; margin-right:4px;"><path d="M21.17 3.25H2.83A.83.83 0 0 0 2 4.08v15.84c0 .46.37.83.83.83h18.34c.46 0 .83-.37.83-.83V4.08a.83.83 0 0 0-.83-.83zM7.5 18H5v-2h2.5v2zm0-4H5v-2h2.5v2zm0-4H5V8h2.5v2zm9.5 8h-8v-2h8v2zm0-4h-8v-2h8v2zm0-4h-8V8h8v2z"/></svg>
-                Vedanta Indenture Analysis Sample →
-              </a>
-              <a href="https://drive.google.com/file/d/1Tb7fmvU33jwtQorrr-qHsLBrds1HrD4Y/view?usp=drive_link"
-                 class="card-link" target="_blank" rel="noopener noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-3px; margin-right:4px;"><path d="M21.17 3.25H2.83A.83.83 0 0 0 2 4.08v15.84c0 .46.37.83.83.83h18.34c.46 0 .83-.37.83-.83V4.08a.83.83 0 0 0-.83-.83zM7.5 18H5v-2h2.5v2zm0-4H5v-2h2.5v2zm0-4H5V8h2.5v2zm9.5 8h-8v-2h8v2zm0-4h-8v-2h8v2zm0-4h-8V8h8v2z"/></svg>
-                Vedanta Covenant Extract Sample →
+                View Model →
               </a>
             </div>
           </div>
@@ -191,46 +204,42 @@
        ====================================================== -->
   <section id="blog" class="section section--alt">
     <div class="container">
-      <h2 class="section-title">Blog</h2>
+      <div class="blog-head">
+        <div class="section-head-text">
+          <span class="eyebrow">// blog</span>
+          <h2 class="section-title">Notes from the field</h2>
+        </div>
+        <a href="/blog/" class="view-all-link">view all →</a>
+      </div>
       <p class="section-intro">
         Notes and reflections from my experimentation with AI in credit research.
       </p>
 
-      <div class="blog-grid">
+      <div class="blog-list">
         {% for post in site.posts limit:2 %}
-        <article class="card blog-card">
-          <time class="card-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%B %-d, %Y' }}</time>
-          <h3 class="card-title">
-            <a href="{{ post.url }}">{{ post.title }}</a>
-          </h3>
-          <p class="card-excerpt">{{ post.excerpt }}</p>
-          <a href="{{ post.url }}" class="card-link">Read more →</a>
-        </article>
+        <a class="blog-row" href="{{ post.url }}">
+          <time class="card-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%Y.%m.%d' }}</time>
+          <div class="blog-row-body">
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.excerpt }}</p>
+          </div>
+          <span class="blog-row-arrow">→</span>
+        </a>
         {% endfor %}
-      </div>
-      <div style="margin-top: var(--space-lg); text-align: center;">
-        <a href="/blog/" class="card-link">View all posts →</a>
       </div>
     </div>
   </section>
 
   <!-- ======================================================
-       About
+       About + Contact
        ====================================================== -->
-  <section id="about" class="section">
-    <div class="container">
-      <div class="about-grid">
+  <section id="about" class="about-contact">
+    <div class="container" style="padding: 0;">
+      <div class="duo">
 
-        <div class="about-photo">
-          <img
-            src="assets/images/linkedin-profile-photo.jpg"
-            alt="Leonard Law, CFA"
-            width="220"
-            height="220">
-        </div>
-
-        <div class="about-bio">
-          <h2 class="section-title">About Me</h2>
+        <div class="duo-pane duo-pane--about about-bio">
+          <span class="eyebrow">// about</span>
+          <h2>About me</h2>
           <p>
             I'm an established Credit Research Analyst with 12 years of experience
             covering Asian corporate high-yield and investment-grade bonds.
@@ -245,59 +254,34 @@
             they collaborate with AI. I'm here to figure that out.
           </p>
 
-          <div class="about-meta">
-            <span class="about-meta-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                <circle cx="12" cy="10" r="3"/>
-              </svg>
-              Singapore
-            </span>
-            <span class="about-meta-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
-                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
-              </svg>
-              Credit Research · Asian Corporate Bonds
-            </span>
-            <span class="about-meta-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                <polyline points="22 4 12 14.01 9 11.01"/>
-              </svg>
-              CFA Charterholder
-            </span>
+          <div class="pills">
+            <span class="pill">Singapore</span>
+            <span class="pill">Asian corporate bonds</span>
+            <span class="pill">CFA charterholder</span>
           </div>
         </div>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- ======================================================
-       Contact
-       ====================================================== -->
-  <section id="contact" class="section section--alt">
-    <div class="container">
-      <div class="contact-content">
-        <h2 class="section-title" style="display: block; text-align: center;">Get in Touch</h2>
-        <p>
-          Interested in discussing AI in credit research, collaboration, or just
-          connecting with a fellow practitioner? I'd love to hear from you.
-        </p>
-        <div class="contact-actions">
-          <a
-            href="https://www.linkedin.com/in/leonard-law-cfa/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn-primary">
-            Connect on LinkedIn
-          </a>
-          <a href="mailto:leonardlaw7@gmail.com" class="btn btn-secondary">
-            Send an Email
-          </a>
+        <div id="contact" class="duo-pane duo-pane--contact contact-content">
+          <span class="eyebrow">// contact</span>
+          <h2>Get in touch</h2>
+          <p>
+            Interested in discussing AI in credit research, collaboration, or just
+            connecting with a fellow practitioner? I'd love to hear from you.
+          </p>
+          <div class="contact-actions">
+            <a
+              href="https://www.linkedin.com/in/leonard-law-cfa/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-primary">
+              Connect on LinkedIn
+            </a>
+            <a href="mailto:leonardlaw7@gmail.com" class="btn btn-secondary">
+              Send an Email
+            </a>
+          </div>
         </div>
-        
+
       </div>
     </div>
   </section>
